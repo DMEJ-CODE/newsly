@@ -11,40 +11,55 @@ class AdminSyncController extends Controller {
         $this->requireAdmin();
 
         $feeds = [
-            // TECHNOLOGY
+            // TECHNOLOGY (Category 1)
             ['url' => 'https://techcrunch.com/feed/', 'category_id' => 1, 'source' => 'TechCrunch'],
             ['url' => 'https://www.theverge.com/rss/index.xml', 'category_id' => 1, 'source' => 'The Verge'],
             ['url' => 'https://arstechnica.com/feed/', 'category_id' => 1, 'source' => 'Ars Technica'],
             ['url' => 'https://www.wired.com/feed/rss', 'category_id' => 1, 'source' => 'Wired'],
             ['url' => 'https://www.engadget.com/rss.xml', 'category_id' => 1, 'source' => 'Engadget'],
+            ['url' => 'https://gizmodo.com/rss', 'category_id' => 1, 'source' => 'Gizmodo'],
+            ['url' => 'https://venturebeat.com/feed/', 'category_id' => 1, 'source' => 'VentureBeat'],
+            ['url' => 'https://thenextweb.com/feed', 'category_id' => 1, 'source' => 'TNW'],
+            ['url' => 'https://readwrite.com/feed/', 'category_id' => 1, 'source' => 'ReadWrite'],
             ['url' => 'https://mashable.com/feed/', 'category_id' => 1, 'source' => 'Mashable'],
             
-            // WORLD NEWS
+            // WORLD NEWS (Category 2)
             ['url' => 'http://feeds.bbci.co.uk/news/world/rss.xml', 'category_id' => 2, 'source' => 'BBC World'],
-            ['url' => 'https://www.aljazeera.com/xml/rss/all.xml', 'category_id' => 2, 'source' => 'Al Jazeera'],
             ['url' => 'https://www.theguardian.com/world/rss', 'category_id' => 2, 'source' => 'The Guardian'],
             ['url' => 'http://rss.cnn.com/rss/edition_world.rss', 'category_id' => 2, 'source' => 'CNN World'],
-            ['url' => 'https://www.nytimes.com/svc/collections/v1/publish/https://www.nytimes.com/section/world/rss.xml', 'category_id' => 2, 'source' => 'NYTimes'],
+            ['url' => 'https://www.aljazeera.com/xml/rss/all.xml', 'category_id' => 2, 'source' => 'Al Jazeera'],
+            ['url' => 'https://www.france24.com/en/rss', 'category_id' => 2, 'source' => 'France 24'],
+            ['url' => 'https://www.euronews.com/rss?format=xml&level=theme&name=news', 'category_id' => 2, 'source' => 'EuroNews'],
+            ['url' => 'https://feeds.npr.org/1004/rss.xml', 'category_id' => 2, 'source' => 'NPR World'],
+            ['url' => 'https://www.dw.com/xml/rss-en-world', 'category_id' => 2, 'source' => 'DW World'],
+            ['url' => 'https://www.reutersagency.com/feed/?best-topics=world-news&post_type=best', 'category_id' => 2, 'source' => 'Reuters'],
             
-            // BUSINESS
+            // BUSINESS (Category 3)
             ['url' => 'https://finance.yahoo.com/news/rssindex', 'category_id' => 3, 'source' => 'Yahoo Finance'],
             ['url' => 'https://www.forbes.com/business/feed/', 'category_id' => 3, 'source' => 'Forbes'],
             ['url' => 'https://www.economist.com/business/rss.xml', 'category_id' => 3, 'source' => 'Economist'],
             ['url' => 'https://www.marketwatch.com/rss/topstories', 'category_id' => 3, 'source' => 'MarketWatch'],
             ['url' => 'https://www.businessinsider.com/rss', 'category_id' => 3, 'source' => 'Business Insider'],
+            ['url' => 'https://www.cnbc.com/id/100003114/device/rss/rss.html', 'category_id' => 3, 'source' => 'CNBC'],
+            ['url' => 'https://www.barrons.com/feed/rss', 'category_id' => 3, 'source' => 'Barron\'s'],
             
-            // SCIENCE
+            // SCIENCE (Category 4)
             ['url' => 'https://www.nasa.gov/rss/dyn/breaking_news.rss', 'category_id' => 4, 'source' => 'NASA'],
-            ['url' => 'http://feeds.bbci.co.uk/news/science_and_environment/rss.xml', 'category_id' => 4, 'source' => 'BBC Science'],
             ['url' => 'https://www.sciencedaily.com/rss/all.xml', 'category_id' => 4, 'source' => 'Science Daily'],
             ['url' => 'https://www.space.com/feeds/all', 'category_id' => 4, 'source' => 'Space.com'],
             ['url' => 'https://www.nature.com/news.rss', 'category_id' => 4, 'source' => 'Nature'],
+            ['url' => 'https://www.scientificamerican.com/rss?id=latest', 'category_id' => 4, 'source' => 'SciAm'],
+            ['url' => 'https://www.livescience.com/feeds/all', 'category_id' => 4, 'source' => 'Live Science'],
+            ['url' => 'https://www.smithsonianmag.com/rss/latest/', 'category_id' => 4, 'source' => 'Smithsonian'],
             
-            // ENTERTAINMENT
+            // ENTERTAINMENT (Category 5)
             ['url' => 'http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml', 'category_id' => 5, 'source' => 'BBC Ent.'],
             ['url' => 'https://variety.com/feed/', 'category_id' => 5, 'source' => 'Variety'],
             ['url' => 'https://www.rollingstone.com/feed/', 'category_id' => 5, 'source' => 'Rolling Stone'],
-            ['url' => 'https://www.hollywoodreporter.com/feed/', 'category_id' => 5, 'source' => 'Holywood Reporter'],
+            ['url' => 'https://www.hollywoodreporter.com/feed/', 'category_id' => 5, 'source' => 'Hollywood Reporter'],
+            ['url' => 'https://deadline.com/feed/', 'category_id' => 5, 'source' => 'Deadline'],
+            ['url' => 'https://www.tmz.com/rss.xml', 'category_id' => 5, 'source' => 'TMZ'],
+            ['url' => 'https://www.billboard.com/feed/', 'category_id' => 5, 'source' => 'Billboard'],
         ];
 
         $syncCount = 0;
@@ -113,7 +128,7 @@ class AdminSyncController extends Controller {
                         }
                     }
                     
-                    if ($syncCount >= 200) break 2; // Increased limit to 200 per burst
+                    if ($syncCount >= 500) break 2; // Increased limit to 500 per burst
                 }
             } catch (Exception $e) {
                 $errorLogs[] = "Error syncing " . $feed['source'] . ": " . $e->getMessage();
